@@ -19,12 +19,13 @@ import { selectRouter } from './appSelectors';
 
 import { useTranslation } from 'react-i18next';
 import { translations } from 'locales/i18n';
+import { LoginPage } from "./containers/LoginPage/Loadable";
 
 export function App() {
   const router = useSelector(selectRouter);
   const { t } = useTranslation();
   const { location } = router
-
+  console.log(location)
   return (
     <ConnectedRouter history={history}>
       <Helmet
@@ -34,7 +35,8 @@ export function App() {
         <meta name="description" content="Skeleton" />
       </Helmet>
       <Switch>
-        <Route path={AppPages.RootPage} component={HomePage} />
+        <Route exact path={AppPages.RootPage} component={HomePage} />
+        <Route path={AppPages.LoginPage} component={LoginPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </ConnectedRouter>
