@@ -25,7 +25,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { configureAppStore } from 'store/configureStore';
 
 import { ThemeProvider } from 'styles/theme/ThemeProvider';
-import { createMuiTheme, ThemeProvider as MaterialThemeProvider } from '@material-ui/core';
+import { createTheme, ThemeProvider as MaterialThemeProvider } from '@material-ui/core';
 import { toast, Zoom } from 'react-toastify';
 // Observe loading of Inter (to remove 'Inter', remove the <link> tag in
 // the index.html file and this observer)
@@ -43,7 +43,7 @@ interface Props {
   Component: typeof App;
 }
 
-const mainTheme = createMuiTheme({
+const mainTheme = createTheme({
   typography: {
     fontFamily: 'Open Sans',
     // fontFamily: language === 'ar' ? 'ar' : 'Open Sans',
