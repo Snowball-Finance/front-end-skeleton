@@ -1,6 +1,5 @@
 import { RouterState } from 'connected-react-router';
 import { HomePageState } from 'app/containers/HomePage/types';
-import { LoginPageState } from 'app/containers/LoginPage/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -13,6 +12,5 @@ export interface RootState {
   global?: any;
   homePage?: HomePageState;
   router?: RouterState;
-  loginPage?: LoginPageState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

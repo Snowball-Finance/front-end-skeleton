@@ -19,7 +19,6 @@ import { selectRouter } from './appSelectors';
 
 import { useTranslation } from 'react-i18next';
 import { translations } from 'locales/i18n';
-import { LoginPage } from "./containers/LoginPage/Loadable";
 
 export function App() {
   const router = useSelector(selectRouter);
@@ -36,7 +35,6 @@ export function App() {
       </Helmet>
       <Switch>
         <Route exact path={AppPages.RootPage} component={HomePage} />
-        <Route path={AppPages.LoginPage} component={LoginPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </ConnectedRouter>

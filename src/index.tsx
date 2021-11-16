@@ -26,7 +26,6 @@ import { configureAppStore } from 'store/configureStore';
 
 import { createTheme, ThemeProvider as MaterialThemeProvider } from '@mui/material';
 import { toast, Zoom } from 'react-toastify';
-import { BrowserRouter } from "react-router-dom";
 // Observe loading of Inter (to remove 'Inter', remove the <link> tag in
 // the index.html file and this observer)
 const openSansObserver = new FontFaceObserver('Open Sans', {});
