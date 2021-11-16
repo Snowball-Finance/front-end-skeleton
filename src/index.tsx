@@ -24,8 +24,7 @@ import { HelmetProvider } from 'react-helmet-async';
 
 import { configureAppStore } from 'store/configureStore';
 
-import { ThemeProvider } from 'styles/theme/ThemeProvider';
-import { createTheme, ThemeProvider as MaterialThemeProvider } from '@material-ui/core';
+import { createTheme, ThemeProvider as MaterialThemeProvider } from '@mui/material';
 import { toast, Zoom } from 'react-toastify';
 // Observe loading of Inter (to remove 'Inter', remove the <link> tag in
 // the index.html file and this observer)
@@ -80,13 +79,11 @@ toast.configure({
 const ConnectedApp = ({ Component }: Props) => (
   <Provider store={store}>
     <MaterialThemeProvider theme={mainTheme}>
-      <ThemeProvider>
-        <HelmetProvider>
-          <React.StrictMode>
-            <Component />
-          </React.StrictMode>
-        </HelmetProvider>
-      </ThemeProvider>
+      <HelmetProvider>
+        <React.StrictMode>
+          <Component />
+        </React.StrictMode>
+      </HelmetProvider>
     </MaterialThemeProvider>
   </Provider>
 );

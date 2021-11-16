@@ -1,6 +1,5 @@
+import { styled } from "@mui/material";
 import React from 'react';
-import styled from 'styled-components/macro';
-import { P } from './P';
 
 import { Helmet } from 'react-helmet-async';
 
@@ -19,13 +18,13 @@ export function NotFoundPage() {
           </span>
           4
         </Title>
-        <P>Page not found.</P>
+        <p>Page not found.</p>
       </Wrapper>
     </>
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled('div')`
   height: calc(100vh);
   display: flex;
   align-items: center;
@@ -34,10 +33,10 @@ const Wrapper = styled.div`
   min-height: 320px;
 `;
 
-const Title = styled.div`
+const Title = styled('div')`
   margin-top: -8vh;
   font-weight: bold;
-  color: ${p => p.theme.text};
+  color: grey;
   font-size: 3.375rem;
 
   span {

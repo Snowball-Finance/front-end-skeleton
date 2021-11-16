@@ -10,7 +10,6 @@ import { componentExists } from '../utils';
 export enum ComponentProptNames {
   'ComponentName' = 'ComponentName',
   'wantMemo' = 'wantMemo',
-  'wantStyledComponents' = 'wantStyledComponents',
   'wantTranslations' = 'wantTranslations',
   'wantLoadable' = 'wantLoadable',
   'wantTests' = 'wantTests',
@@ -41,12 +40,7 @@ export const componentGenerator: PlopGenerator = {
       default: false,
       message: 'Do you want to wrap your component in React.memo?',
     },
-    {
-      type: 'confirm',
-      name: ComponentProptNames.wantStyledComponents,
-      default: true,
-      message: 'Do you want to use styled-components?',
-    },
+
     {
       type: 'confirm',
       name: ComponentProptNames.wantTranslations,

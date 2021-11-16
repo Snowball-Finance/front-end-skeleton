@@ -13,7 +13,6 @@ export enum ContainerProptNames {
   'wantHeaders' = 'wantHeaders',
   'wantSlice' = 'wantSlice',
   'wantSaga' = 'wantSaga',
-  'wantStyledComponents' = 'wantStyledComponents',
   'wantTranslations' = 'wantTranslations',
   'wantLoadable' = 'wantLoadable',
   'wantRxjs' = 'wantRxjs',
@@ -67,12 +66,7 @@ export const containerGenerator: PlopGenerator = {
       default: true,
       message: 'Do you want sagas for asynchronous flows? (e.g. fetching data)',
     },
-    {
-      type: 'confirm',
-      name: ContainerProptNames.wantStyledComponents,
-      default: true,
-      message: 'Do you want to use styled-components?',
-    },
+
     {
       type: 'confirm',
       name: ContainerProptNames.wantTranslations,

@@ -1,4 +1,3 @@
-import { ThemeState } from 'styles/theme/types';
 import { RouterState } from 'connected-react-router';
 import { HomePageState } from 'app/containers/HomePage/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
@@ -10,9 +9,8 @@ import { HomePageState } from 'app/containers/HomePage/types';
   So, not available always
 */
 export interface RootState {
-  theme?: ThemeState;
   global?: any;
-  router?: RouterState;
   homePage?: HomePageState;
+  router?: RouterState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

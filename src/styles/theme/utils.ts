@@ -1,17 +1,14 @@
-import { ThemeKeyType } from './types';
 
-/* istanbul ignore next line */
 export const isSystemDark = window?.matchMedia
   ? window.matchMedia('(prefers-color-scheme: dark)')?.matches
   : undefined;
 
-export function saveTheme(theme: ThemeKeyType) {
+export function saveTheme(theme: string) {
   window.localStorage && localStorage.setItem('selectedTheme', theme);
 }
 
-/* istanbul ignore next line */
-export function getThemeFromStorage(): ThemeKeyType | null {
+export function getThemeFromStorage(): string | null {
   return window.localStorage
-    ? (localStorage.getItem('selectedTheme') as ThemeKeyType) || null
+    ? (localStorage.getItem('selectedTheme') as string) || null
     : null;
 }

@@ -21,9 +21,7 @@ import { useTranslation } from 'react-i18next';
 {{#if wantSlice}}
 import { useSelector, useDispatch } from 'react-redux';
 {{/if}}
-{{#if wantStyledComponents}}
-import styled from 'styled-components/macro';
-{{/if}}
+ 
 
 {{#if wantSlice}}
 {{#if wantSaga}}
@@ -93,17 +91,13 @@ return (
     <meta name="description" content="Description of {{properCase ComponentName}}" />
   </Helmet>
   {{/if}}
-  {{#if wantStyledComponents}}
-  <Wrapper>
-    {{else}}
-    <div>
+ 
+     <div>
       {{/if}}
       {{#if wantTranslations}}
       {t('')}
       {{/if}}
-      {{#if wantStyledComponents}}
-    </Wrapper>
-    {{else}}
+ 
   </div>
   {{/if}}
 </>
@@ -113,8 +107,4 @@ return (
 });
 {{else}}
 };
-{{/if}}
-
-{{#if wantStyledComponents}}
-const Wrapper = styled.div``;
 {{/if}}
