@@ -36,9 +36,10 @@ export const HomePage = memo((props: Props) => {
     </div>
   );
 });
-const Title = styled('p')`
-color:blue;
-`
+const Title = styled('p')(({ theme }) => ({
+  color: theme.palette.primary.dark
+}))
+
 
 const StyledFullWidthWrapper = styled(FullWidthWrapper)`
 border-radius: 12px;
