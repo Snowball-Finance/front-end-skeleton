@@ -2,7 +2,7 @@
  * Asynchronously loads the component for NotFoundPage
  */
 
-import { PageLoading } from 'app/components/common/page_loading';
+import { PageLoading } from 'app/components/common/pageLoading';
 import * as React from 'react';
 import { lazyLoad } from 'utils/loadable';
 

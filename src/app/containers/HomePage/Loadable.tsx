@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import { lazyLoad } from 'utils/loadable';
-import { PageLoading } from 'app/components/common/page_loading';
+import { PageLoading } from 'app/components/common/pageLoading';
 
 export const HomePage = lazyLoad(
   () => import('./index'),
