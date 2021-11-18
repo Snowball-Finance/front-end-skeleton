@@ -7,10 +7,9 @@
  - Redux Toolkit
  - Reselect
  - Redux-Saga
- - Styled Components
  - Typescript
  - React-i18next
- - material-ui
+ - MUI-v5
 
 **Unit Testing**
 
@@ -227,7 +226,7 @@ You can use the [react-router hooks](https://reacttraining.com/react-router/web/
          ); 
        }
 # Styling (CSS)
-This Skeleton uses [`styled-components`](https://github.com/styled-components/styled-components) for styling React components. `styled-components` allows you to write actual CSS inside your JavaScript, enabling you to use the [full power of CSS](https://github.com/styled-components/styled-components/blob/master/docs/css-we-support.md)  without mapping between styles and components. 
+This Skeleton uses [`Material UI `](https://mui.com/system/styled/) for styling React components. `styled()` in MUI  allows you to write actual CSS inside your JavaScript, enabling you to use the full power of CSS without mapping between styles and components. 
 
 ## `sanitize.css`
 
@@ -238,19 +237,19 @@ This Skeleton also uses [`sanitize.css`](https://github.com/jonathantneal/saniti
 The example below creates two styled React components (`<Title>` and `<Wrapper>`) and renders them as children of the `<Header>` component:
 
 	 import * as React from 'react';
-     import styled from 'styled-components/macro';
+     import styled from '@mmui/material';
      
       // Create a <Title> React component that renders an <h1> which is
       // centered, palevioletred and sized at 1.5em 
        
-       const Title = styled.h1` 
+       const Title = styled('h1')` 
        font-size: 1.5em; text-align: center; color: palevioletred;
         `; 
         
         // Create a <Wrapper> React component that renders a <section> with 
         // some padding and a papayawhip background
         
-        const Wrapper = styled.section`
+        const Wrapper = styled('section')`
         padding: 4em; background: papayawhip; 
          `;
           
@@ -268,15 +267,3 @@ The example below creates two styled React components (`<Title>` and `<Wrapper>`
           }
 
 > _(The CSS rules are automatically vendor-prefixed, so you don't have to think about it!)_
-
-**Tips:** Importing from `styled-components/macro` will enable some features you can [see here](https://styled-components.com/docs/tooling#babel-macro).
-
-# Media queries
-
-    import { media } from 'styles/media';
-    
-     const SomeDiv = styled.div`
-      display: flex; .... ${media.medium` display: block `}; 
-    `;
-# Matrial-UI v4
-we will use Material ui for our common components, like inputs, dropdowns, search components and so on

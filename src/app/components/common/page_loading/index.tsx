@@ -1,7 +1,7 @@
 import React from 'react';
 import { Wrapper } from './wrapper';
 
-const GridLoading = props => {
+const PageLoading = props => {
   return (
     <Wrapper {...props}>
       <div className="lds-ellipsis">
@@ -13,4 +13,4 @@ const GridLoading = props => {
     </Wrapper>
   );
 };
-export { GridLoading };
+export { PageLoading };

@@ -5,10 +5,10 @@
  */
 import React from 'react';
 import { lazyLoad } from 'utils/loadable';
-import { GridLoading } from 'app/components/grid_loading/gridLoading';
+import { PageLoading } from 'app/components/common/page_loading';
 
 export const HomePage = lazyLoad(
   () => import('./index'),
   module => module.HomePage,
-  { fallback: <GridLoading /> },
+  { fallback: <PageLoading /> },
 );
