@@ -24,7 +24,6 @@ export function App() {
   const router = useSelector(selectRouter);
   const { t } = useTranslation();
   const { location } = router
-  console.log(location)
   return (
     <ConnectedRouter history={history}>
       <Helmet

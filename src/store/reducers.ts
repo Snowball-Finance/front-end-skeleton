@@ -14,16 +14,11 @@ import { globalReducer } from './slice';
  */
 export function createReducer(injectedReducers: InjectedReducersType = {}) {
   // Initially we don't have any injectedReducers, so returning identity function to avoid the error
-  if (Object.keys(injectedReducers).length === 0) {
-    return combineReducers({
-      global: globalReducer,
-      router: connectRouter(history),
-    });
-  } else {
-    return combineReducers({
-      ...injectedReducers,
-      global: globalReducer,
-      router: connectRouter(history),
-    });
-  }
+
+  return combineReducers({
+    ...(Object.keys(injectedReducers).length !== 0 && injectedReducers),
+    global: globalReducer,
+    router: connectRouter(history),
+  });
+
 }

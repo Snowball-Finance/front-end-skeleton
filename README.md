@@ -225,8 +225,16 @@ You can use the [react-router hooks](https://reacttraining.com/react-router/web/
         <button type="button" onClick={handleClick}> Go home </button>
          ); 
        }
-# Styling (CSS)
+# Styling  
 This Skeleton uses [`Material UI `](https://mui.com/system/styled/) for styling React components. `styled()` in MUI  allows you to write actual CSS inside your JavaScript, enabling you to use the full power of CSS without mapping between styles and components. 
+for the base components, we will use MUI5 components and for styling them we will use [styled() approach](https://mui.com/system/styled/)
+
+styled() has the benefits below:
+- uses MUI's default theme if no theme is available in React context.
+- supports the theme's styleOverrides and variants to be applied, based on the name applied in the options.
+- adds support for the the sx prop
+- adds by default shouldForwardProp option that is taking into account all props used internally in the MUI components (can be overridden).
+
 
 ## `sanitize.css`
 

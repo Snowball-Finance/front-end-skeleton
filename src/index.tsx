@@ -24,8 +24,9 @@ import { HelmetProvider } from 'react-helmet-async';
 
 import { configureAppStore } from 'store/configureStore';
 
-import { createTheme, ThemeProvider as MaterialThemeProvider } from '@mui/material';
+import { ThemeProvider as MaterialThemeProvider } from '@mui/material';
 import { toast, Zoom } from 'react-toastify';
+import { theme } from "styles/theme";
 // Observe loading of Inter (to remove 'Inter', remove the <link> tag in
 // the index.html file and this observer)
 const openSansObserver = new FontFaceObserver('Open Sans', {});
@@ -42,27 +43,7 @@ interface Props {
   Component: typeof App;
 }
 
-const mainTheme = createTheme({
-  typography: {
-    fontFamily: 'Open Sans',
-    // fontFamily: language === 'ar' ? 'ar' : 'Open Sans',
-  },
-  // direction: language === 'ar' ? 'rtl' : 'ltr',
-  direction: 'ltr',
-  palette: {
 
-    secondary: {
-      main: '#d20e42',
-    },
-    primary: {
-      main: '#EEB31D',
-    },
-    action: {
-      disabledBackground: '#efefef',
-      disabled: '#333333'
-    }
-  },
-});
 
 toast.configure({
   autoClose: 6000,
@@ -78,11 +59,9 @@ toast.configure({
 
 const ConnectedApp = ({ Component }: Props) => (
   <Provider store={store}>
-    <MaterialThemeProvider theme={mainTheme}>
+    <MaterialThemeProvider theme={theme}>
       <HelmetProvider>
-        <React.StrictMode>
-          <Component />
-        </React.StrictMode>
+        <Component />
       </HelmetProvider>
     </MaterialThemeProvider>
   </Provider>

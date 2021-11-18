@@ -1,6 +1,6 @@
 import { styled } from "@mui/material";
 
-import { SnowButtonProps, SnowButton } from "app/components/base/SnowButton";
+import { SnowButtonProps, SnowButton } from "app/components/base/snowButton";
 import { FC } from "react";
 
 
