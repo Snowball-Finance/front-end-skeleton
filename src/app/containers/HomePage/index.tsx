@@ -11,6 +11,8 @@ import { HomePageReducer, sliceKey } from './slice';
 import { homePageSaga } from './saga';
 import { FullWidthWrapper } from "app/components/wrappers/fullWidth";
 import { styled } from "@mui/material";
+import { ContainedButton } from "app/components/common/buttons/containedButton";
+import { OutlinedButton } from "app/components/common/buttons/outlinedButton";
 
 interface Props { }
 
@@ -26,7 +28,11 @@ export const HomePage = memo((props: Props) => {
         <Title>
           some content
         </Title>
+        <Title as={ContainedButton}>
+          some content
+        </Title>
       </StyledFullWidthWrapper>
+      <StyledFullWidthWrapper as={OutlinedButton}> fullButton</StyledFullWidthWrapper>
     </div>
   );
 });
@@ -38,4 +44,9 @@ const StyledFullWidthWrapper = styled(FullWidthWrapper)`
 border-radius: 12px;
 background-color:lightblue;
 height: 100px;
+color:black;
+&:hover { 
+  background:lightblue;
+  
+  }
 `
