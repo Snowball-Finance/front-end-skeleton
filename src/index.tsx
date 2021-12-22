@@ -10,11 +10,11 @@ import 'react-app-polyfill/stable';
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider as ReduxProvider } from 'react-redux';
 import FontFaceObserver from 'fontfaceobserver';
 import * as serviceWorker from 'serviceWorker';
 import 'sanitize.css/sanitize.css';
-import { history } from 'utils/history';
+import { history } from 'router/history';
 // Initialize languages
 import './locales/i18n';
 
@@ -25,8 +25,17 @@ import { HelmetProvider } from 'react-helmet-async';
 import { configureAppStore } from 'store/configureStore';
 
 import { ThemeProvider as MaterialThemeProvider } from '@mui/material';
-import { toast, Zoom } from 'react-toastify';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+
 import { theme } from "styles/theme";
+import { Web3ReactProvider } from "@web3-react/core";
+import { provider } from 'web3-core';
+
+import Web3 from "web3";
+import { ApolloProvider } from "@apollo/client";
+import { apolloClient } from "services/apollo/client";
+import { ConnectedRouter } from "connected-react-router";
 // Observe loading of Inter (to remove 'Inter', remove the <link> tag in
 // the index.html file and this observer)
 const openSansObserver = new FontFaceObserver('Open Sans', {});
@@ -38,33 +47,40 @@ openSansObserver.load().then(() => {
 
 const store = configureAppStore({}, history);
 const MOUNT_NODE = document.getElementById('Skeleton') as HTMLElement;
-
 interface Props {
   Component: typeof App;
 }
-
-
 
 toast.configure({
   autoClose: 6000,
   draggable: true,
   pauseOnHover: true,
   rtl: false,
-  transition: Zoom,
-  position: 'bottom-right',
-  hideProgressBar: true,
+  // transition: Slide,
+  position: 'top-right',
+  // hideProgressBar: true,
 });
 
+const getLibrary = (provider: provider) => {
+  return new Web3(provider);
+}
 
 
 const ConnectedApp = ({ Component }: Props) => (
-  <Provider store={store}>
-    <MaterialThemeProvider theme={theme}>
-      <HelmetProvider>
-        <Component />
-      </HelmetProvider>
-    </MaterialThemeProvider>
-  </Provider>
+  <ReduxProvider store={store}>
+    <ApolloProvider client={apolloClient}>
+      <Web3ReactProvider {...{ getLibrary }}>
+        <MaterialThemeProvider theme={theme}>
+          <HelmetProvider>
+            <ConnectedRouter history={history}>
+              <Component />
+            </ConnectedRouter>
+          </HelmetProvider>
+        </MaterialThemeProvider>
+      </Web3ReactProvider>
+    </ApolloProvider>
+  </ReduxProvider>
+
 );
 
 const render = (Component: typeof App) => {

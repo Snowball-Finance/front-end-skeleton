@@ -5,8 +5,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { connectRouter } from 'connected-react-router';
 
-import { InjectedReducersType } from 'utils/types/injector-typings';
-import { history } from 'utils/history';
+import { InjectedReducersType } from 'store/types/injector-typings';
+import { history } from 'router/history';
 import { globalReducer } from './slice';
 
 /**

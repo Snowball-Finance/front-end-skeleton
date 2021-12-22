@@ -20,7 +20,7 @@ export enum ContainerProptNames {
 }
 
 const containersPath = path.join(__dirname, '../../../src/app/containers');
-const rootStatePath = path.join(__dirname, '../../../src/types/RootState.ts');
+const rootStatePath = path.join(__dirname, '../../../src/store/types/RootState.ts');
 const constantsPath = path.join(__dirname, '../../../src/app/constants.ts');
 
 export const containerGenerator: PlopGenerator = {

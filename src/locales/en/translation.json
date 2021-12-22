@@ -2,21 +2,5 @@
   "HomePage": {
     "home": "Home",
     "description": "Home Page"
-  },
-  "LoginPage": {
-    "Login": "Login",
-    "Email": "Email",
-    "Signup": "signup",
-    "Submit": "Submit",
-    "userName": "Username",
-    "password": "Password",
-    "WelcomeBack": "Welcome Back",
-    "LoginToYourAccount": "Login to your account",
-    "ProvideEmailAndPasswordToLogIn": "Provide Email and Password to Log in.",
-    "ForgotPassword": "Forgot Password?"
-  },
-  "Inputs": {
-    "Email": "Email",
-    "Password": "Password"
   }
 }

@@ -268,3 +268,4 @@ The example below creates two styled React components (`<Title>` and `<Wrapper>`
           }
 
 > _(The CSS rules are automatically vendor-prefixed, so you don't have to think about it!)_
+> update the snowball analytics version before using this skeleton

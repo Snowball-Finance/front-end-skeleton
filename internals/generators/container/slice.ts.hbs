@@ -1,8 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { createSlice } from 'utils/@reduxjs/toolkit';
 import { ContainerState } from './types';
-import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
-
+import { createSlice } from "store/toolkit";
+import { useInjectReducer, useInjectSaga } from "store/redux-injectors";
 
 import { {{ camelCase ComponentName }}Saga } from './saga';
 

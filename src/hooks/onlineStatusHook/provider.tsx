@@ -1,3 +1,4 @@
+import { BaseUrl } from "app/constants";
 import React, {
   useState,
   useEffect,
@@ -5,7 +6,6 @@ import React, {
   FC,
   createContext,
 } from 'react';
-import { BaseUrl } from 'services/constants';
 
 const PING_RESOURCE = `${BaseUrl}/check`;
 const TIMEOUT_TIME_MS = 4000;

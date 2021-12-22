@@ -25,7 +25,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 {{#if wantSlice}}
 {{#if wantSaga}}
-import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
+import { useInjectReducer, useInjectSaga } from 'store/redux-injectors';
 {{else}}
 import { useInjectReducer } from 'utils/redux-injectors';
 {{/if}}
