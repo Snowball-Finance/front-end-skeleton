@@ -233,39 +233,4 @@ for the base components, we will use MUI5 components and for styling them we wil
 
 This Skeleton also uses [`sanitize.css`](https://github.com/jonathantneal/sanitize.css) to make browsers render all elements more consistently and in line with modern standards, it's a modern alternative to CSS resets.
 
-# styled-components
-
-The example below creates two styled React components (`<Title>` and `<Wrapper>`) and renders them as children of the `<Header>` component:
-
-	 import * as React from 'react';
-     import styled from '@mmui/material';
-     
-      // Create a <Title> React component that renders an <h1> which is
-      // centered, palevioletred and sized at 1.5em 
-       
-       const Title = styled('h1')` 
-       font-size: 1.5em; text-align: center; color: palevioletred;
-        `; 
-        
-        // Create a <Wrapper> React component that renders a <section> with 
-        // some padding and a papayawhip background
-        
-        const Wrapper = styled('section')`
-        padding: 4em; background: papayawhip; 
-         `;
-          
-        // Use them like any other React component – except they're styled! 
-           
-         function Button() { 
-         return ( 
-         <Wrapper> 
-	           <Title>
-		           Hello, here is your first styled component!
-	           </Title>
-		            ... 
-            </Wrapper>
-             ); 
-          }
-
-> _(The CSS rules are automatically vendor-prefixed, so you don't have to think about it!)_
 ### update the snowball-analytics version before using this skeleton
